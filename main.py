@@ -95,8 +95,16 @@ if click  == "1":
         borrwing_new_book()
 
 elif click == "2":
-    print("hi")
-
+    print("1-If you want to inquire about existing books, press '1'\n2- If you want to add a new book press '2'\n3- If you want to know the orders press '3'\n")
+    click2 = input("")
+    if click2 == "1":
+        print("The books are:")
+        for name_books in list_books:
+            print(f"the title is {name_books.title}, the status is {name_books.status}\n\n")
+    elif click2 == "2":
+        create_new_books()
+    elif click2 == "3":
+        for value in list_borrowed_order:
+            print(value.id, value.client_id, value.book_id, value.status)
 else:print("wrong entry")
 
-print(list_clients)
